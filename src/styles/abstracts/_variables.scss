@@ -1,0 +1,42 @@
+/* ---------- Brand Colors ---------- */
+
+.theme-purple {
+  --primary: #7c3aed;
+}
+
+.theme-blue {
+  --primary: #2563eb;
+}
+
+.theme-green {
+  --primary: #16a34a;
+}
+
+.theme-orange {
+  --primary: #ea580c;
+}
+
+/* ---------- Surface Colors ---------- */
+
+body.light {
+  --background: #ffffff;
+  --text-color: #000000;
+}
+
+body.dark {
+  --background: #121212;
+  --text-color: #ffffff;
+}
+
+/* ---------- Angular Material Token Override ---------- */
+
+:root {
+  /* Material primary */
+  --mdc-theme-primary: var(--primary);
+
+  /* Background */
+  --mdc-theme-surface: var(--background);
+
+  /* Text */
+  --mdc-theme-on-surface: var(--text-color);
+}

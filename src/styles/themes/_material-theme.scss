@@ -1,0 +1,36 @@
+@use '@angular/material' as mat;
+
+// Required core styles
+@include mat.core();
+
+// ----- Light Theme -----
+
+$light-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$indigo-palette,
+    ),
+  )
+);
+
+// ----- Dark Theme -----
+
+$dark-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: mat.$deep-purple-palette,
+    ),
+  )
+);
+
+// Apply themes using body classes
+
+body.light {
+  @include mat.theme($light-theme);
+}
+
+body.dark {
+  @include mat.theme($dark-theme);
+}
