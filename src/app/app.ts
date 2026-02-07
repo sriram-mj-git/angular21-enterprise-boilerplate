@@ -6,7 +6,6 @@ import { AuthStore } from './stores/auth.store';
   selector: 'app-root',
   imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss',
 })
 export class App {
   private authStore = inject(AuthStore);
