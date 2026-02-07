@@ -1,6 +1,9 @@
 import { http, HttpResponse } from 'msw';
 import { USERS } from '../data/users.data';
 
+let accessToken = 'valid-access-token';
+let tokenExpired = false;
+
 export const authHandlers = [
   http.post('/auth/login', async ({ request }) => {
     const body = (await request.json()) as {
@@ -22,16 +25,18 @@ export const authHandlers = [
   }),
 
   http.post('/auth/refresh', () => {
+    tokenExpired = false;
+
     return HttpResponse.json({
-      accessToken: 'new-access-token',
+      accessToken: crypto.randomUUID(),
     });
   }),
 
   http.get('/auth/permissions', ({ request }) => {
     const token = request.headers.get('Authorization');
 
-    if (!token) {
-      return HttpResponse.json({ message: 'Unauthorized' }, { status: 401 });
+    if (!token || tokenExpired) {
+      return HttpResponse.json({ message: 'Token expired' }, { status: 401 });
     }
 
     return HttpResponse.json({

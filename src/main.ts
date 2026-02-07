@@ -12,6 +12,8 @@ async function prepareApp() {
       serviceWorker: {
         url: '/mockServiceWorker.js',
       },
+
+      onUnhandledRequest: 'bypass',
     });
   }
 }

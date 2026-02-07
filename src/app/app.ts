@@ -1,6 +1,6 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AuthRepository } from './features/auth/services/auth.repository';
+import { AuthStore } from './stores/auth.store';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +9,15 @@ import { AuthRepository } from './features/auth/services/auth.repository';
   styleUrl: './app.scss',
 })
 export class App {
-  private repo = inject(AuthRepository);
-  ngOnInit() {
-    this.repo.login('admin', 'admin123').subscribe(console.log);
+  private authStore = inject(AuthStore);
+
+  // ⭐ effect inside field initializer (valid injection context)
+  private debugEffect = effect(() => {
+    console.log('USER => ', this.authStore.user());
+    console.log('IS AUTH => ', this.authStore.isAuthenticated());
+  });
+
+  constructor() {
+    this.authStore.login('admin', 'admin123');
   }
 }
