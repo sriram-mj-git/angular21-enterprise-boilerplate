@@ -3,11 +3,13 @@ import { AuthRepository } from '../features/auth/services/auth.repository';
 import { TokenStorageService } from '../core/services/token-storage.service';
 import { User } from '../api-contract/models/user.model';
 import { mapPermissionDtoToUser } from '../api-contract/mappers/auth.mapper';
+import { FeatureFlagStore } from './feature-flag.store';
 
 @Injectable({ providedIn: 'root' })
 export class AuthStore {
   private repo = inject(AuthRepository);
   private tokenStorage = inject(TokenStorageService);
+  private featureStore = inject(FeatureFlagStore);
 
   // -------- State --------
 
@@ -33,6 +35,7 @@ export class AuthStore {
           const user = mapPermissionDtoToUser(loginRes.userId, permissionDto);
 
           this.userSignal.set(user);
+          this.featureStore.loadFlags();
         });
       },
     });
