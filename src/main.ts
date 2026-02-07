@@ -2,9 +2,6 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { App } from './app/app';
 
-// bootstrapApplication(App, appConfig)
-//   .catch((err) => console.error(err));
-
 import { envConfig } from './app/config/env.config';
 
 async function prepareApp() {
@@ -20,5 +17,5 @@ async function prepareApp() {
 }
 
 prepareApp().then(() => {
-  bootstrapApplication(App, appConfig);
+  bootstrapApplication(App, appConfig).catch((err) => console.error(err));
 });

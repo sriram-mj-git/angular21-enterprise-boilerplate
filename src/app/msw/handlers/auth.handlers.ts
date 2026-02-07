@@ -31,7 +31,7 @@ export const authHandlers = [
     const token = request.headers.get('Authorization');
 
     if (!token) {
-      return HttpResponse.json({}, { status: 401 });
+      return HttpResponse.json({ message: 'Unauthorized' }, { status: 401 });
     }
 
     return HttpResponse.json({
