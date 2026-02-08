@@ -16,7 +16,7 @@ export class TaskRepository {
   }
 
   createTask(title: string) {
-    return this.http.post<TaskDto>('/tasks', { title }).pipe(map(mapTaskDtoToModel));
+    return this.http.post<TaskDto>('/tasksss', { title }).pipe(map(mapTaskDtoToModel));
   }
 
   updateTask(id: string, title: string) {
