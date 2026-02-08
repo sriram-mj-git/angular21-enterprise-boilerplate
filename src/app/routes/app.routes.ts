@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { provideTaskFeature } from '../features/tasks/providers/task.providers';
 
 export const routes: Routes = [
   {
@@ -14,6 +15,7 @@ export const routes: Routes = [
 
       {
         path: 'tasks',
+        providers: [provideTaskFeature()],
         loadComponent: () => import('../features/tasks/pages/task.page').then((m) => m.TaskPage),
       },
     ],

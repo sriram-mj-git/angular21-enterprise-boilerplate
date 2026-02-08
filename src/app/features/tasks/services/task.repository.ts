@@ -1,18 +1,34 @@
 import { inject, Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { map, of, tap } from 'rxjs';
 
 import { HttpService } from '../../../core/services/http.service';
 import { TaskDto } from '../../../api-contract/dtos/task.dto';
 import { mapTaskDtoToModel } from '../../../api-contract/mappers/task.mapper';
+import { CacheService } from '../../../core/services/cache.service';
+import { Task } from '../../../api-contract/models/task.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskRepository {
   private http = inject(HttpService);
+  private cache = inject(CacheService);
+
+  // getTasks() {
+  //   return this.http.get<TaskDto[]>('/tasks').pipe(map((dtos) => dtos.map(mapTaskDtoToModel)));
+  // }
 
   getTasks() {
-    return this.http.get<TaskDto[]>('/tasks').pipe(map((dtos) => dtos.map(mapTaskDtoToModel)));
+    const cacheKey = 'tasks';
+
+    const cached = this.cache.get<Task[]>(cacheKey);
+
+    if (cached) return of(cached);
+
+    return this.http.get<TaskDto[]>('/tasks').pipe(
+      map((dtos) => dtos.map(mapTaskDtoToModel)),
+      tap((tasks) => this.cache.set(cacheKey, tasks)),
+    );
   }
 
   createTask(title: string) {

@@ -3,7 +3,6 @@ import { Task } from '../../../api-contract/models/task.model';
 import { TaskRepository } from '../services/task.repository';
 import { LoggerService } from '../../../core/services/logger.service';
 
-@Injectable({ providedIn: 'root' })
 export class TaskStore {
   private repo = inject(TaskRepository);
   private logger = inject(LoggerService);
