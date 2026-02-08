@@ -1,0 +1,11 @@
+<ng-template #skeleton>
+  <app-skeleton-card />
+</ng-template>
+
+<div *appSkeleton="skeleton">
+  <app-task-list
+    [tasks]="store.tasks()"
+    (deleteTask)="deleteTask($event)"
+    (createTask)="openCreateDialog()"
+  />
+</div>

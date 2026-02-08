@@ -22,9 +22,9 @@ export class App {
 
   constructor() {
     this.themeStore.loadTheme();
-    setTimeout(() => {
-      this.themeStore.setMode('dark');
-    }, 3000);
+    // setTimeout(() => {
+    //   this.themeStore.setMode('dark');
+    // }, 3000);
     this.authStore.login('admin', 'admin123');
   }
 }

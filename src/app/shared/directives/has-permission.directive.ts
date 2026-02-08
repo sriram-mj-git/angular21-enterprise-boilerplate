@@ -1,4 +1,4 @@
-import { Directive, Input, TemplateRef, ViewContainerRef, inject, effect } from '@angular/core';
+import { Directive, TemplateRef, ViewContainerRef, inject, effect, input } from '@angular/core';
 
 import { AuthStore } from '../../stores/auth.store';
 
@@ -6,21 +6,26 @@ import { AuthStore } from '../../stores/auth.store';
   selector: '[appHasPermission]',
 })
 export class HasPermissionDirective {
-  private templateRef = inject(TemplateRef<any>);
-  private viewContainer = inject(ViewContainerRef);
+  private template = inject(TemplateRef<any>);
+  private vc = inject(ViewContainerRef);
   private authStore = inject(AuthStore);
 
-  @Input({ required: true })
-  set appHasPermission(permission: string) {
+  // ⭐ Must match selector name
+  appHasPermission = input<string>();
+
+  constructor() {
     effect(() => {
+      const permission = this.appHasPermission();
       const user = this.authStore.user();
+
+      if (!permission) return;
 
       const allowed = user?.permissions.includes(permission);
 
-      this.viewContainer.clear();
+      this.vc.clear();
 
       if (allowed) {
-        this.viewContainer.createEmbeddedView(this.templateRef);
+        this.vc.createEmbeddedView(this.template);
       }
     });
   }

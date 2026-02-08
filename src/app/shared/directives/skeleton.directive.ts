@@ -1,4 +1,4 @@
-import { Directive, TemplateRef, ViewContainerRef, inject, effect, Input } from '@angular/core';
+import { Directive, TemplateRef, ViewContainerRef, inject, effect, input } from '@angular/core';
 
 import { LoadingStore } from '../../stores/loading.store';
 
@@ -11,13 +11,19 @@ export class SkeletonDirective {
   private vc = inject(ViewContainerRef);
   private loadingStore = inject(LoadingStore);
 
-  @Input({ required: true })
-  set appSkeleton(skeletonTemplate: TemplateRef<any>) {
+  // ⭐ IMPORTANT: name must match selector
+  appSkeleton = input<TemplateRef<any>>();
+
+  constructor() {
     effect(() => {
+      const skeleton = this.appSkeleton();
+
+      if (!skeleton) return;
+
       this.vc.clear();
 
       if (this.loadingStore.isLoading()) {
-        this.vc.createEmbeddedView(skeletonTemplate);
+        this.vc.createEmbeddedView(skeleton);
       } else {
         this.vc.createEmbeddedView(this.template);
       }

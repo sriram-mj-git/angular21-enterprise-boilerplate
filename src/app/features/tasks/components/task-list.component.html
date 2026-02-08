@@ -1,0 +1,9 @@
+<button (click)="createTask.emit()">Add Task</button>
+
+@for (task of tasks(); track task.id) {
+  <div class="flex gap-2">
+    {{ task.title }}
+
+    <button *appHasPermission="'TASK_CREATE'" (click)="createTask.emit()">Add Task</button>
+  </div>
+}
