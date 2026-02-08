@@ -2,4 +2,8 @@
 
 <input [value]="title()" (input)="title.set($any($event.target).value)" />
 
-<button (click)="save()">Save</button>
+@if (!isValid()) {
+  <p class="text-red-500">Minimum 3 characters required</p>
+}
+
+<button [disabled]="!isValid()" (click)="save()">Save</button>

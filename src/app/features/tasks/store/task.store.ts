@@ -1,10 +1,12 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { Task } from '../../../api-contract/models/task.model';
 import { TaskRepository } from '../services/task.repository';
+import { LoggerService } from '../../../core/services/logger.service';
 
 @Injectable({ providedIn: 'root' })
 export class TaskStore {
   private repo = inject(TaskRepository);
+  private logger = inject(LoggerService);
 
   private tasksSignal = signal<Task[]>([]);
   private loadingSignal = signal(false);
@@ -27,5 +29,54 @@ export class TaskStore {
 
   removeTask(id: string) {
     this.tasksSignal.update((list) => list.filter((t) => t.id !== id));
+  }
+
+  createTask(title: string) {
+    const tempTask: Task = {
+      id: crypto.randomUUID(),
+      title,
+      completed: false,
+    };
+
+    // Optimistic UI
+    this.tasksSignal.update((list) => [...list, tempTask]);
+
+    this.repo.createTask(title).subscribe({
+      next: (realTask) => {
+        // Replace temp with real
+        this.tasksSignal.update((list) => list.map((t) => (t.id === tempTask.id ? realTask : t)));
+      },
+
+      error: (err) => {
+        this.logger.error('Task create failed', err);
+        this.removeTask(tempTask.id);
+      },
+    });
+  }
+
+  deleteTask(id: string) {
+    const backup = this.tasksSignal();
+
+    this.removeTask(id);
+
+    this.repo.deleteTask(id).subscribe({
+      error: (err) => {
+        this.logger.error('Task delete failed', err);
+
+        this.tasksSignal.set(backup);
+      },
+    });
+  }
+
+  updateTask(id: string, title: string) {
+    const backup = this.tasksSignal();
+
+    this.tasksSignal.update((list) => list.map((t) => (t.id === id ? { ...t, title } : t)));
+
+    this.repo.updateTask(id, title).subscribe({
+      error: () => {
+        this.tasksSignal.set(backup);
+      },
+    });
   }
 }

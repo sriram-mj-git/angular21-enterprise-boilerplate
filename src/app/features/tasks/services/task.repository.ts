@@ -14,4 +14,16 @@ export class TaskRepository {
   getTasks() {
     return this.http.get<TaskDto[]>('/tasks').pipe(map((dtos) => dtos.map(mapTaskDtoToModel)));
   }
+
+  createTask(title: string) {
+    return this.http.post<TaskDto>('/tasks', { title }).pipe(map(mapTaskDtoToModel));
+  }
+
+  updateTask(id: string, title: string) {
+    return this.http.put<TaskDto>(`/tasks/${id}`, { title }).pipe(map(mapTaskDtoToModel));
+  }
+
+  deleteTask(id: string) {
+    return this.http.delete<void>(`/tasks/${id}`);
+  }
 }

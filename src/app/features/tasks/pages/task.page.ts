@@ -25,11 +25,7 @@ export class TaskPage implements OnInit {
       .afterClosed()
       .subscribe((title) => {
         if (title) {
-          this.store.addTask({
-            id: crypto.randomUUID(),
-            title,
-            completed: false,
-          });
+          this.store.createTask(title);
         }
       });
   }
