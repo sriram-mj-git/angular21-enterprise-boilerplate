@@ -1,8 +1,7 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { finalize } from 'rxjs';
-
-import { LoadingStore } from '../../stores/loading.store';
+import { LoadingStore } from '../state/loading.store';
 
 export const loadingInterceptor: HttpInterceptorFn = (req, next) => {
   const loadingStore = inject(LoadingStore);

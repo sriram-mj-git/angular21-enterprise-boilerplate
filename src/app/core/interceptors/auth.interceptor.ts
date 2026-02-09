@@ -1,8 +1,8 @@
 import { HttpInterceptorFn, HttpErrorResponse } from '@angular/common/http';
 import { inject } from '@angular/core';
-import { TokenStorageService } from '../services/token-storage.service';
-import { RefreshTokenService } from '../services/refresh-token.service';
 import { catchError, switchMap, throwError } from 'rxjs';
+import { TokenStorageService } from '../../domains/auth/services/token-storage.service';
+import { RefreshTokenService } from '../../domains/auth/services/refresh-token.service';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const tokenStorage = inject(TokenStorageService);
