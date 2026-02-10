@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "taskflow": {
+    "angular-21-boilerplate": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -29,9 +29,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "styles": ["src/styles.scss"]
           },
           "configurations": {
             "production": {
@@ -61,10 +59,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "taskflow:build:production"
+              "buildTarget": "angular-21-boilerplate:build:production"
             },
             "development": {
-              "buildTarget": "taskflow:build:development"
+              "buildTarget": "angular-21-boilerplate:build:development"
             }
           },
           "defaultConfiguration": "development"
