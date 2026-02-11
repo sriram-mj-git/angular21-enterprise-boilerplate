@@ -1,3 +1,14 @@
+![Angular](https://img.shields.io/badge/Angular-21-red?logo=angular)
+![Signals](https://img.shields.io/badge/State-Signals-orange)
+![Standalone](https://img.shields.io/badge/Architecture-Standalone-blue)
+![Zoneless](https://img.shields.io/badge/Change%20Detection-Zoneless-purple)
+![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?logo=typescript)
+![Tailwind](https://img.shields.io/badge/Styling-TailwindCSS-38B2AC?logo=tailwindcss)
+![Angular Material](https://img.shields.io/badge/UI-Angular%20Material-indigo)
+![MSW](https://img.shields.io/badge/API-MSW-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Status](https://img.shields.io/badge/Status-Production%20Ready-success)
+
 # 📘 Angular 21 Enterprise Boilerplate
 
 A **modern, scalable, signal-first Angular 21 architecture** built for real-world enterprise and SaaS applications.
