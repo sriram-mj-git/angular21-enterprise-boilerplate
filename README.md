@@ -1,59 +1,367 @@
-# angular-21-boilerplate
+# 📘 Angular 21 Enterprise Boilerplate
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+A **modern, scalable, signal-first Angular 21 architecture** built for real-world enterprise and SaaS applications.
 
-## Development server
+This boilerplate provides a **production-ready foundation** using Domain Driven Design, Clean Architecture, and Angular’s latest features including standalone APIs, zoneless change detection, and signals.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+## 🚀 Why This Boilerplate Exists
+
+Most frontend projects slow down over time due to poor structure, tight coupling, and inconsistent architecture.
+
+This boilerplate solves that by providing:
+
+* Clear domain ownership
+* Enterprise-grade infrastructure layer
+* Signal-based reactive state management
+* Scalable feature architecture
+* Centralized error, loading, logging & caching systems
+* Reusable design system
+* Mock API development support
+* Performance and scalability patterns
+
+---
+
+## ⭐ Key Features
+
+### ✅ Angular 21 Modern Architecture
+
+* Standalone components
+* Zoneless change detection
+* Signals-first reactive state
+* Function-based guards & interceptors
+
+---
+
+### ✅ Domain Driven Design (DDD)
+
+Each feature is self-contained with:
+
+* API contracts
+* Repository layer
+* Store layer
+* UI layer
+* Providers
+
+---
+
+### ✅ Enterprise Infrastructure
+
+* HTTP abstraction layer
+* Interceptor pipeline
+* Logging system
+* Global error handling
+* Loading tracking system
+* Request caching
+* Smart retry strategy
+
+---
+
+### ✅ Authentication & Authorization
+
+* Login workflow
+* Role hierarchy
+* Permission guards
+* Refresh token handling
+* Route-level security
+
+---
+
+### ✅ Task CRUD (Reference Feature)
+
+* Optimistic UI updates
+* Rollback handling
+* Signal forms
+* Repository pattern
+* DTO → Model mapping
+
+---
+
+### ✅ Feature Flags
+
+* API-driven feature toggling
+* Directive-based UI rendering
+
+---
+
+### ✅ Theme Engine
+
+* Dark / Light mode
+* Dynamic color branding
+* CSS variable integration
+* Angular Material + Tailwind sync
+
+---
+
+### ✅ Loading & Skeleton System
+
+* Automatic request detection
+* Global loading store
+* Reusable skeleton directive
+
+---
+
+### ✅ Error Handling & UX Feedback
+
+* Centralized HTTP error interceptor
+* Error classification
+* Toast notification system
+* Logger integration
+
+---
+
+### ✅ Mock API Development
+
+* Mock Service Worker (MSW)
+* Domain-aligned API simulation
+* Offline development support
+
+---
+
+## 🧠 Architecture Overview
+
+```
+UI → Store → Repository → HttpService → Interceptors → API/MSW → Mapper → Store → UI
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 📂 Project Structure
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+src/app
+│
+├── app-shell        → App bootstrap, routing & providers
+├── core             → Infrastructure layer
+├── design-system    → Reusable UI + theming
+├── domains          → Business features (DDD)
+├── layout           → App shell layout
+├── mock-api         → MSW mock backend
+└── shared           → Utilities & helpers
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
+## 📦 Domain Example
+
+```
+domains/tasks
+├── api
+├── models
+├── store
+├── ui
+├── providers
+└── routes
 ```
 
-## Building
+Each domain owns its entire business logic.
 
-To build the project run:
+---
+
+## 🏗 Tech Stack
+
+* Angular 21
+* Angular Signals
+* Angular Material
+* Tailwind CSS
+* SCSS architecture
+* MSW (Mock Service Worker)
+* RxJS
+* TypeScript Strict Mode
+
+---
+
+## 🧪 Enterprise Capabilities
+
+✔ Optimistic CRUD
+✔ Role-based routing
+✔ Feature flag rendering
+✔ Centralized logging
+✔ Global loading detection
+✔ API caching
+✔ Retry strategy
+✔ Performance monitoring hooks
+✔ Prefetch navigation support
+
+---
+
+## 🧰 Getting Started
+
+### 1️⃣ Clone Repository
 
 ```bash
-ng build
+git clone <repo-url>
+cd <project-name>
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### 2️⃣ Install Dependencies
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+### 3️⃣ Start Development Server
 
 ```bash
-ng e2e
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Application runs at:
 
-## Additional Resources
+```
+http://localhost:4200
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+### 4️⃣ Mock API Setup
+
+MSW is already configured.
+
+If needed:
+
+```bash
+npx msw init public/
+```
+
+---
+
+## 🧩 How To Add New Feature
+
+1. Create new domain:
+
+```
+domains/reports
+```
+
+2. Follow domain structure:
+
+* api
+* models
+* store
+* ui
+* providers
+
+3. Register routes
+
+4. Done ✅
+
+---
+
+## 🎨 Theme Customization
+
+Themes can be modified inside:
+
+```
+design-system/theme
+```
+
+Supports:
+
+* Brand colors
+* Dark/light mode
+* Multi-tenant theming
+
+---
+
+## 🔐 Security Features
+
+* Auth Guards
+* Role Guards
+* Permission Guards
+* Feature Guards
+* Refresh token pipeline
+
+---
+
+## ⚡ Performance Features
+
+* Request caching
+* Route prefetch
+* Lazy store injection
+* Optimistic UI updates
+
+---
+
+## 🧪 Development Advantages
+
+This boilerplate improves:
+
+| Area               | Benefit                              |
+| ------------------ | ------------------------------------ |
+| Maintainability    | Clear separation of concerns         |
+| Debugging          | Centralized logging & error handling |
+| Scalability        | Domain-based feature isolation       |
+| Team Collaboration | Clear ownership boundaries           |
+| Development Speed  | Prebuilt infrastructure              |
+| Reliability        | Optimistic rollback & retry strategy |
+
+---
+
+## 🧭 When To Use This Boilerplate
+
+Use for:
+
+* Enterprise dashboards
+* SaaS platforms
+* Admin panels
+* Internal tools
+* Scalable Angular platforms
+
+---
+
+## 📈 Future Expansion Ready
+
+Supports:
+
+* Feature versioning
+* Microfrontend migration
+* Nx monorepo integration
+* SSR integration
+* Multi-team development
+
+---
+
+## 🤝 Contribution Guidelines
+
+1. Follow domain-driven structure
+2. Avoid placing business logic inside core
+3. Keep UI reusable under design-system
+4. Maintain strict typing
+5. Write minimal, clean, scalable code
+
+---
+
+## 📚 Learning Goals Covered
+
+This project demonstrates:
+
+* Advanced Angular architecture
+* Signal-based state management
+* Enterprise frontend patterns
+* Production-grade infrastructure design
+
+---
+
+## 👨‍💻 Author Purpose
+
+This boilerplate is designed as a reusable foundation to accelerate modern Angular enterprise application development.
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## ⭐ If You Found This Useful
+
+Consider starring ⭐ the repository to support and share with the community.
+
+---
