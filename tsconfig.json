@@ -14,13 +14,28 @@
     "module": "preserve",
     "baseUrl": "./",
     "paths": {
+      "@app": ["src/app"],
       "@app/*": ["src/app/*"],
+
+      "@core": ["src/app/core"],
       "@core/*": ["src/app/core/*"],
+
+      "@design-system": ["src/app/design-system"],
       "@design-system/*": ["src/app/design-system/*"],
+
+      "@domains": ["src/app/domains"],
       "@domains/*": ["src/app/domains/*"],
+
+      "@layout": ["src/app/layout"],
       "@layout/*": ["src/app/layout/*"],
+
+      "@shared": ["src/app/shared"],
       "@shared/*": ["src/app/shared/*"],
+
+      "@app-shell": ["src/app/app-shell"],
       "@app-shell/*": ["src/app/app-shell/*"],
+
+      "@mock-api": ["src/app/mock-api"],
       "@mock-api/*": ["src/app/mock-api/*"]
     }
   },
