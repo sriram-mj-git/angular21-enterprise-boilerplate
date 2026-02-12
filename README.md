@@ -23,14 +23,14 @@ Most frontend projects slow down over time due to poor structure, tight coupling
 
 This boilerplate solves that by providing:
 
-* Clear domain ownership
-* Enterprise-grade infrastructure layer
-* Signal-based reactive state management
-* Scalable feature architecture
-* Centralized error, loading, logging & caching systems
-* Reusable design system
-* Mock API development support
-* Performance and scalability patterns
+- Clear domain ownership
+- Enterprise-grade infrastructure layer
+- Signal-based reactive state management
+- Scalable feature architecture
+- Centralized error, loading, logging & caching systems
+- Reusable design system
+- Mock API development support
+- Performance and scalability patterns
 
 ---
 
@@ -38,10 +38,10 @@ This boilerplate solves that by providing:
 
 ### ✅ Angular 21 Modern Architecture
 
-* Standalone components
-* Zoneless change detection
-* Signals-first reactive state
-* Function-based guards & interceptors
+- Standalone components
+- Zoneless change detection
+- Signals-first reactive state
+- Function-based guards & interceptors
 
 ---
 
@@ -49,84 +49,84 @@ This boilerplate solves that by providing:
 
 Each feature is self-contained with:
 
-* API contracts
-* Repository layer
-* Store layer
-* UI layer
-* Providers
+- API contracts
+- Repository layer
+- Store layer
+- UI layer
+- Providers
 
 ---
 
 ### ✅ Enterprise Infrastructure
 
-* HTTP abstraction layer
-* Interceptor pipeline
-* Logging system
-* Global error handling
-* Loading tracking system
-* Request caching
-* Smart retry strategy
+- HTTP abstraction layer
+- Interceptor pipeline
+- Logging system
+- Global error handling
+- Loading tracking system
+- Request caching
+- Smart retry strategy
 
 ---
 
 ### ✅ Authentication & Authorization
 
-* Login workflow
-* Role hierarchy
-* Permission guards
-* Refresh token handling
-* Route-level security
+- Login workflow
+- Role hierarchy
+- Permission guards
+- Refresh token handling
+- Route-level security
 
 ---
 
 ### ✅ Task CRUD (Reference Feature)
 
-* Optimistic UI updates
-* Rollback handling
-* Signal forms
-* Repository pattern
-* DTO → Model mapping
+- Optimistic UI updates
+- Rollback handling
+- Signal forms
+- Repository pattern
+- DTO → Model mapping
 
 ---
 
 ### ✅ Feature Flags
 
-* API-driven feature toggling
-* Directive-based UI rendering
+- API-driven feature toggling
+- Directive-based UI rendering
 
 ---
 
 ### ✅ Theme Engine
 
-* Dark / Light mode
-* Dynamic color branding
-* CSS variable integration
-* Angular Material + Tailwind sync
+- Dark / Light mode
+- Dynamic color branding
+- CSS variable integration
+- Angular Material + Tailwind sync
 
 ---
 
 ### ✅ Loading & Skeleton System
 
-* Automatic request detection
-* Global loading store
-* Reusable skeleton directive
+- Automatic request detection
+- Global loading store
+- Reusable skeleton directive
 
 ---
 
 ### ✅ Error Handling & UX Feedback
 
-* Centralized HTTP error interceptor
-* Error classification
-* Toast notification system
-* Logger integration
+- Centralized HTTP error interceptor
+- Error classification
+- Toast notification system
+- Logger integration
 
 ---
 
 ### ✅ Mock API Development
 
-* Mock Service Worker (MSW)
-* Domain-aligned API simulation
-* Offline development support
+- Mock Service Worker (MSW)
+- Domain-aligned API simulation
+- Offline development support
 
 ---
 
@@ -172,14 +172,14 @@ Each domain owns its entire business logic.
 
 ## 🏗 Tech Stack
 
-* Angular 21
-* Angular Signals
-* Angular Material
-* Tailwind CSS
-* SCSS architecture
-* MSW (Mock Service Worker)
-* RxJS
-* TypeScript Strict Mode
+- Angular 21
+- Angular Signals
+- Angular Material
+- Tailwind CSS
+- SCSS architecture
+- MSW (Mock Service Worker)
+- RxJS
+- TypeScript Strict Mode
 
 ---
 
@@ -252,11 +252,11 @@ domains/reports
 
 2. Follow domain structure:
 
-* api
-* models
-* store
-* ui
-* providers
+- api
+- models
+- store
+- ui
+- providers
 
 3. Register routes
 
@@ -274,28 +274,28 @@ design-system/theme
 
 Supports:
 
-* Brand colors
-* Dark/light mode
-* Multi-tenant theming
+- Brand colors
+- Dark/light mode
+- Multi-tenant theming
 
 ---
 
 ## 🔐 Security Features
 
-* Auth Guards
-* Role Guards
-* Permission Guards
-* Feature Guards
-* Refresh token pipeline
+- Auth Guards
+- Role Guards
+- Permission Guards
+- Feature Guards
+- Refresh token pipeline
 
 ---
 
 ## ⚡ Performance Features
 
-* Request caching
-* Route prefetch
-* Lazy store injection
-* Optimistic UI updates
+- Request caching
+- Route prefetch
+- Lazy store injection
+- Optimistic UI updates
 
 ---
 
@@ -318,11 +318,11 @@ This boilerplate improves:
 
 Use for:
 
-* Enterprise dashboards
-* SaaS platforms
-* Admin panels
-* Internal tools
-* Scalable Angular platforms
+- Enterprise dashboards
+- SaaS platforms
+- Admin panels
+- Internal tools
+- Scalable Angular platforms
 
 ---
 
@@ -330,11 +330,11 @@ Use for:
 
 Supports:
 
-* Feature versioning
-* Microfrontend migration
-* Nx monorepo integration
-* SSR integration
-* Multi-team development
+- Feature versioning
+- Microfrontend migration
+- Nx monorepo integration
+- SSR integration
+- Multi-team development
 
 ---
 
@@ -352,10 +352,10 @@ Supports:
 
 This project demonstrates:
 
-* Advanced Angular architecture
-* Signal-based state management
-* Enterprise frontend patterns
-* Production-grade infrastructure design
+- Advanced Angular architecture
+- Signal-based state management
+- Enterprise frontend patterns
+- Production-grade infrastructure design
 
 ---
 

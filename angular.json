@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "angular-21-boilerplate": {
+    "angular-enterprise-boilerplate": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -59,10 +59,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-21-boilerplate:build:production"
+              "buildTarget": "angular-enterprise-boilerplate:build:production"
             },
             "development": {
-              "buildTarget": "angular-21-boilerplate:build:development"
+              "buildTarget": "angular-enterprise-boilerplate:build:development"
             }
           },
           "defaultConfiguration": "development"
