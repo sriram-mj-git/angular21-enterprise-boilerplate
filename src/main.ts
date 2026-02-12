@@ -1,8 +1,6 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { App } from './app/app';
-
-import { envConfig } from '@app-shell/config/env.config';
-import { appConfig } from '@app-shell/config/app.config';
+import { appConfig, envConfig } from '@app-shell';
 
 async function prepareApp() {
   if (envConfig.enableMsw && typeof window !== 'undefined') {

@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { TokenStorageService } from './token-storage.service';
 import { Observable, map, shareReplay, tap } from 'rxjs';
-import { HttpService } from '@core/services/http.service';
+import { HttpService } from '@core';
 
 @Injectable({ providedIn: 'root' })
 export class RefreshTokenService {

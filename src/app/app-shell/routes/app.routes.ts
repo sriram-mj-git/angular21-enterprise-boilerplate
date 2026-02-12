@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { provideTaskDomain } from '@domains/tasks/providers/task.providers';
+import { provideTaskDomain } from '@domains/tasks';
 
-export const routes: Routes = [
+export const appRoutes: Routes = [
   {
     path: '',
     loadComponent: () => import('../../layout/shell/shell').then((m) => m.Shell),
