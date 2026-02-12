@@ -18,6 +18,11 @@ export const routes: Routes = [
         providers: [provideTaskDomain()],
         loadComponent: () => import('@domains/tasks/ui/pages/task.page').then((m) => m.TaskPage),
       },
+      {
+        path: 'settings',
+        loadChildren: () =>
+          import('@domains/preferences/routes/preferences.routes').then((m) => m.preferencesRoutes),
+      },
     ],
   },
 ];

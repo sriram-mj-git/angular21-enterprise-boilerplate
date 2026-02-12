@@ -1,0 +1,21 @@
+<mat-card class="mb-6">
+  <h2 class="text-primary">Theme Mode</h2>
+
+  <button mat-raised-button (click)="setMode('light')">Light</button>
+
+  <button mat-raised-button (click)="setMode('dark')">Dark</button>
+</mat-card>
+
+<mat-card>
+  <h2 class="text-primary">Theme Color</h2>
+
+  <button mat-raised-button (click)="setColor('purple')">Purple</button>
+
+  <button mat-raised-button (click)="setColor('blue')">Blue</button>
+
+  <button mat-raised-button (click)="setColor('green')">Green</button>
+
+  <button mat-raised-button (click)="setColor('orange')">Orange</button>
+</mat-card>
+
+<button mat-raised-button (click)="reset()">Reset Theme</button>
