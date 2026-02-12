@@ -1,6 +1,6 @@
 import { Directive, TemplateRef, ViewContainerRef, inject, effect, input } from '@angular/core';
 
-import { AuthStore } from '../../domains/auth/store/auth.store';
+import { AuthStore } from '@domains/auth/store/auth.store';
 
 @Directive({
   selector: '[appHasPermission]',

@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { provideTaskDomain } from '../../domains/tasks/providers/task.providers';
+import { provideTaskDomain } from '@domains/tasks/providers/task.providers';
 
 export const routes: Routes = [
   {
@@ -16,8 +16,7 @@ export const routes: Routes = [
       {
         path: 'tasks',
         providers: [provideTaskDomain()],
-        loadComponent: () =>
-          import('../../domains/tasks/ui/pages/task.page').then((m) => m.TaskPage),
+        loadComponent: () => import('@domains/tasks/ui/pages/task.page').then((m) => m.TaskPage),
       },
     ],
   },

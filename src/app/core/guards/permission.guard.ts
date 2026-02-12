@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivateFn, Router } from '@angular/router';
-import { AuthStore } from '../../domains/auth/store/auth.store';
-import { PermissionRouteData } from '../../domains/auth/contracts/route-auth.contract';
+import { AuthStore } from '@domains/auth/store/auth.store';
+import { PermissionRouteData } from '@domains/auth/contracts/route-auth.contract';
 
 export const permissionGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
   const requiredPermissions = (route.data as PermissionRouteData).permissions;

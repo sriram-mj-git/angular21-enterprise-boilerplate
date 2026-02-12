@@ -1,6 +1,6 @@
 import { Directive, Input, TemplateRef, ViewContainerRef, inject, effect } from '@angular/core';
-import { FeatureFlagStore } from '../../domains/feature-flags/store/feature-flag.store';
-import { FeatureFlag } from '../../domains/feature-flags/models/feature-flag.model';
+import { FeatureFlagStore } from '@domains/feature-flags/store/feature-flag.store';
+import { FeatureFlag } from '@domains/feature-flags/models/feature-flag.model';
 
 @Directive({
   selector: '[appFeature]',

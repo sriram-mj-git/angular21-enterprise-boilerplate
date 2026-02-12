@@ -1,8 +1,8 @@
 import { Component, effect, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AuthStore } from './domains/auth/store/auth.store';
-import { ThemeStore } from './design-system/theme/store/theme.store';
-import { ThemeService } from './design-system/theme/services/theme.service';
+import { AuthStore } from '@domains/auth/store/auth.store';
+import { ThemeStore } from '@design-system/theme/store/theme.store';
+import { ThemeService } from '@design-system/theme/services/theme.service';
 
 @Component({
   selector: 'app-root',

@@ -4,8 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { TaskListComponent } from '../components/task-list.component';
 import { TaskDialogComponent } from '../dialogs/task-dialog.component';
 
-import { SkeletonDirective } from '../../../../design-system/directives/skeleton.directive';
-import { SkeletonCardComponent } from '../../../../design-system/skeleton/ui/skeleton-card.component';
+import { SkeletonDirective } from '@design-system/directives/skeleton.directive';
+import { SkeletonCardComponent } from '@design-system/skeleton/ui/skeleton-card.component';
 
 @Component({
   selector: 'app-task-page',

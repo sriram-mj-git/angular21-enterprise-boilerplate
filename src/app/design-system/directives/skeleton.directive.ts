@@ -1,5 +1,5 @@
 import { Directive, TemplateRef, ViewContainerRef, inject, effect, input } from '@angular/core';
-import { LoadingStore } from '../../core/state/loading.store';
+import { LoadingStore } from '@core/state/loading.store';
 
 @Directive({
   selector: '[appSkeleton]',

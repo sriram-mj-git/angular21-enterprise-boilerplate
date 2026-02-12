@@ -1,6 +1,6 @@
 import { inject, signal } from '@angular/core';
 import { TaskRepository } from '../api/repositories/task.repository';
-import { LoggerService } from '../../../core/services/logger.service';
+import { LoggerService } from '@core';
 import { Task } from '../models/task.model';
 
 export class TaskStore {

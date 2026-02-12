@@ -1,5 +1,5 @@
 import { Component, input, output } from '@angular/core';
-import { HasPermissionDirective } from '../../../../design-system/directives/has-permission.directive';
+import { HasPermissionDirective } from '@design-system/directives/has-permission.directive';
 import { Task } from '../../models/task.model';
 
 @Component({

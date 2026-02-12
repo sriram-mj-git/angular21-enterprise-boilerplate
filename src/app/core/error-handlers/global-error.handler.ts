@@ -1,6 +1,6 @@
 import { ErrorHandler, Injectable, inject } from '@angular/core';
 import { LoggerService } from '../services/logger.service';
-import { ToastStore } from '../../design-system/feedback/toast/toast.store';
+import { ToastStore } from '@design-system/feedback/toast';
 
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {

@@ -3,7 +3,7 @@ import { inject } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 import { LoggerService } from '../services/logger.service';
 import { classifyHttpError } from '../utils/error-classifier';
-import { ToastStore } from '../../design-system/feedback/toast/toast.store';
+import { ToastStore } from '@design-system/feedback/toast/toast.store';
 
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
   const toast = inject(ToastStore);
