@@ -5,10 +5,12 @@ import { ThemeConfig, ThemeMode, ThemeColor } from '../models/theme.model';
 export class ThemeStore {
   private readonly STORAGE_KEY = 'app_theme';
 
-  private themeSignal = signal<ThemeConfig>({
+  private readonly initialConfig: ThemeConfig = {
     mode: 'light',
-    color: 'purple',
-  });
+    color: 'orange',
+  };
+
+  private themeSignal = signal<ThemeConfig>(this.initialConfig);
 
   theme = this.themeSignal.asReadonly();
 
@@ -21,6 +23,10 @@ export class ThemeStore {
 
   setColor(color: ThemeColor) {
     this.updateTheme({ color });
+  }
+
+  reset() {
+    this.updateTheme(this.initialConfig);
   }
 
   private updateTheme(partial: Partial<ThemeConfig>) {
