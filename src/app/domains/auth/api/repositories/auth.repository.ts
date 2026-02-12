@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { HttpService } from '@core/services/http.service';
+import { HttpService } from '@core';
 import { LoginResponseDto, PermissionResponseDto } from '../dtos/auth.dto';
 
 @Injectable({

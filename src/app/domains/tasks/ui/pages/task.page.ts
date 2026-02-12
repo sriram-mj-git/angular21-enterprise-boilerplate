@@ -5,7 +5,7 @@ import { TaskListComponent } from '../components/task-list.component';
 import { TaskDialogComponent } from '../dialogs/task-dialog.component';
 
 import { SkeletonDirective } from '@design-system/directives/skeleton.directive';
-import { SkeletonCardComponent } from '@design-system/skeleton/ui/skeleton-card.component';
+import { SkeletonCardComponent } from '@design-system/skeleton';
 
 @Component({
   selector: 'app-task-page',

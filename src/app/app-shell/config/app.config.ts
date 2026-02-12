@@ -2,7 +2,7 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 
 import { provideRouter } from '@angular/router';
 import { provideCore } from '@core/providers/core.providers';
-import { routes } from '../routes/app.routes';
+import { appRoutes } from '../routes/app.routes';
 import { provideDomain } from '../providers/domain.providers';
 
 export const appConfig: ApplicationConfig = {
@@ -10,6 +10,6 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideCore(),
     provideDomain(),
-    provideRouter(routes),
+    provideRouter(appRoutes),
   ],
 };

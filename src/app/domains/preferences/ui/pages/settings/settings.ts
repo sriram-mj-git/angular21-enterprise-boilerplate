@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ThemeColor, ThemeMode, ThemeStore } from '@design-system/theme';
+import { ThemeColor, ThemeMode, ThemeStore, ThemeService } from '@design-system/theme';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
@@ -10,6 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class Settings {
   private themeStore = inject(ThemeStore);
+  private themeService = inject(ThemeService);
 
   mode = this.themeStore.mode;
   color = this.themeStore.color;

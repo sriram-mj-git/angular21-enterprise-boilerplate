@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { map, of, tap } from 'rxjs';
 
-import { HttpService } from '@core/services/http.service';
+import { HttpService } from '@core';
 import { CacheService } from '@core';
 import { Task } from '../../models/task.model';
 import { TaskDto } from '../dtos/task.dto';
